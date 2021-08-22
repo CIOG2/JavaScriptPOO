@@ -36,10 +36,32 @@ const zeus = new Student(
 
 
 //Prototipos con la sintaxis de clases
+// class Student2 {
+//     constructor(name, age, cursosAprovados){
+//         this.name = name;
+//         this.age = age;
+//         this.cursosAprovados = cursosAprovados;
+//     }
+//     //Metodos
+//     aprovarCurso(curso){
+//         this.cursosAprovados.push(curso);
+//     }
+// } 
+
+// const Carlos = new Student2('Carlos', 20,['Curso de POO JavaScript']);
+// Carlos.cursosAprovados.push('Curso de introduccion a React.js')
+
 class Student2 {
-    constructor(name, age, cursosAprovados){
+      //Uso de Objetos
+    constructor({
+        name,
+        age,
+        email,
+        cursosAprovados = [],
+    }){
         this.name = name;
         this.age = age;
+        this.email = email
         this.cursosAprovados = cursosAprovados;
     }
     //Metodos
@@ -48,8 +70,13 @@ class Student2 {
     }
 } 
 
-const Carlos = new Student2('Carlos', 20,['Curso de POO JavaScript']);
-Carlos.cursosAprovados.push('Curso de introduccion a React.js')
+const Carlos = new Student2({
+    name: 'Carlos',
+    age: 20,
+    email: 'carlos@gmail.com',
+});
+// Carlos.cursosAprovados.push('Curso de introduccion a React.js')
+
 
 console.log(Carlos);
 

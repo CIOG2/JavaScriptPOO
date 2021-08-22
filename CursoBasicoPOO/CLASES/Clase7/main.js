@@ -1,67 +1,43 @@
-const Ivan1 = {
-    name: 'Ivan',
-    userName: 'CIOG',
-    points: 7946,
-    socialMedia: {
-        twitter: 'Carlos_GO',
-        instagram: 'CIOG2',
-        facebook: undefined,
-    },
-    approvedCourses: [
-        'Curso Definitivo de HTML y CSS',
-        'Curso practico de HTML y CSS',
-        'Curso Profecional de Javascript'
-    ],
-    learnignpaths: [
-        {
-            name: 'Escuela de desarrollo web',
-            courses: [
-                'Curso Definitivo de HTML y CSS',
-                'Curso practico de HTML y CSS',
-                'Curso Profecional de Javascript'        
-            ],
-        },
-        {
-            name: 'Escuela de Javascript',
-            courses: [
-                'Curso de Front-end developer',
-                'Curso Asincronismo',
-                'Curso Emascript6'        
-            ],
-        },
-    ]
+class Student {
+    constructor({
+        name,
+        email,
+        userName,
+        twitter = undefined,
+        instagram = undefined,
+        facebook = undefined,
+        approvedCourses = [],
+        learningPaths = [],
+    }){
+        this.name = name;
+        this.email = email;
+        this.userName = userName;
+        this.socialMedia = {
+            twitter,
+            instagram,
+            facebook,
+        };
+        this.approvedCourses = approvedCourses;
+        this.learningPaths = learningPaths;
+    }
 }
 
-const zeus = {
-    name: 'Zeus',
+const Ivan2 = new Student({
+    name: 'Ivan',
+    userName: 'CIOG',
+    email: 'Carlos@gmail.com',
+    instagram: 'CIOG2'
+}); 
+
+const zeus2 = new Student({
+    name: 'Zues',
     userName: 'ZeusGamer',
-    points: 1306,
-    socialMedia: {
-        twitter: 'ZEUS_GO',
-        instagram: 'zeus2',
-        facebook: undefined,
-    },
-    approvedCourses: [
-        'Curso Definitivo de HTML y CSS',
-        'Curso practico de HTML y CSS',
-        'Curso Profecional de Javascript'
-    ],
-    learnignpaths: [
-        {
-            name: 'Escuela de desarrollo web',
-            courses: [
-                'Curso Definitivo de HTML y CSS',
-                'Curso practico de HTML y CSS',
-                'Curso Profecional de Javascript'        
-            ],
-        },
-        {
-            name: 'Escuela de Video Juegos',
-            courses: [
-                'Curso de introduccion a la produccion de vgs',
-                'Curso de unReal Engine',
-                'Curso de Unity 3D',
-            ],
-        },
-    ]
-}
+    email: 'Zeus@gmail.com',
+    instagram: 'Zeus2'
+}); 
+
+
+
+
+
+

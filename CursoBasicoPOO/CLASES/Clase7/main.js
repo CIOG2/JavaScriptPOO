@@ -1,3 +1,18 @@
+class Escuela {
+    constructor({
+        name,
+        NumeroCursos,
+        Cursos = [],
+    }){
+        this.name = name;
+        this.NumeroCursos = NumeroCursos;
+        this.Cursos = Cursos;
+    }
+}
+
+
+
+
 class Student {
     constructor({
         name,
@@ -7,7 +22,7 @@ class Student {
         instagram = undefined,
         facebook = undefined,
         approvedCourses = [],
-        learningPaths = [],
+        learningPaths,
     }){
         this.name = name;
         this.email = email;
@@ -22,6 +37,19 @@ class Student {
     }
 }
 
+const EscuelaDeJavascript = new Escuela({
+    name: 'Escuela de JavaScript',
+    NumeroCursos: 6,
+    Cursos: [
+        'Curso de Fronend Developer',
+        'Curso Basico de JavaScript',
+        'Curso curso practico de JavaScript',
+        'Curso de ECMASsript 6+',
+        'Curso de Asincronismo con JavaScript',
+        'Curso Curso Profesionl de JavaScript',
+    ],
+})
+
 const Ivan2 = new Student({
     name: 'Ivan',
     userName: 'CIOG',
@@ -33,11 +61,11 @@ const zeus2 = new Student({
     name: 'Zues',
     userName: 'ZeusGamer',
     email: 'Zeus@gmail.com',
-    instagram: 'Zeus2'
+    instagram: 'Zeus2',
+    learningPaths: EscuelaDeJavascript,
 }); 
 
 
-
-
-
-
+console.log(Ivan2);
+console.log(zeus2);
+console.log(EscuelaDeJavascript);

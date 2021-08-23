@@ -10,8 +10,24 @@ class Escuela {
     }
 }
 
-
-
+class Cursos {
+    constructor({
+        name,
+        clasesCurso = [],
+    }){
+        this.name = name;
+        this.clasesCurso = clasesCurso;
+    }
+}
+class CLASES {
+    constructor({
+        name,
+        id,
+    }){
+        this.name = name;
+        this.id = id;
+    }
+}
 
 class Student {
     constructor({
@@ -37,18 +53,39 @@ class Student {
     }
 }
 
+const ClasePOO = new CLASES({
+    name: 'Programacion Orientada a Objetos',
+    id: 391039292,
+});
+
+const CursoDeFronendDeveloper = new Cursos({
+    name: 'Curso de Fronend Developer',
+    clasesCurso: [
+        'clase 1',
+        'clase 2',
+        'clase 3',
+        ClasePOO,
+        'clase 5',
+        'clase 6',
+    ],
+});
+
 const EscuelaDeJavascript = new Escuela({
     name: 'Escuela de JavaScript',
     NumeroCursos: 6,
     Cursos: [
-        'Curso de Fronend Developer',
+        CursoDeFronendDeveloper,
         'Curso Basico de JavaScript',
         'Curso curso practico de JavaScript',
         'Curso de ECMASsript 6+',
         'Curso de Asincronismo con JavaScript',
         'Curso Curso Profesionl de JavaScript',
     ],
-})
+});
+
+
+
+
 
 const Ivan2 = new Student({
     name: 'Ivan',
@@ -68,4 +105,3 @@ const zeus2 = new Student({
 
 console.log(Ivan2);
 console.log(zeus2);
-console.log(EscuelaDeJavascript);

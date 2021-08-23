@@ -1,6 +1,6 @@
 //
 //
-//ASTRACCION
+//ENCAPSULAMIENTO
 //
 //
 class Escuela {

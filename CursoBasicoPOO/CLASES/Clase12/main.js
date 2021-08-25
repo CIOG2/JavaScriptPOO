@@ -10,16 +10,6 @@ class Escuela {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 class Cursos {
     constructor({
         name,
@@ -41,6 +31,16 @@ class Cursos {
         }
     }
 }
+
+function VideoPlay(id) {
+    const urlSecreta = 'https://platziVideoSecreto.com/' + id;
+    console.log('Reproduciendo Video');
+}
+function VideoStop(id) {
+    const urlSecreta = 'https://platziVideoSecreto.com/' + id;
+    console.log('Video Pausado');
+}
+
 class CLASES {
     constructor({
         name,
@@ -48,6 +48,13 @@ class CLASES {
     }){
         this.name = name;
         this.id = id;
+    }
+    
+    reproducir() {
+        VideoPlay(this.id);
+    }
+    pausar() {
+        VideoStop(this.id)
     }
 }
 

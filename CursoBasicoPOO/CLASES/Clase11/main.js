@@ -10,13 +10,35 @@ class Escuela {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
 class Cursos {
     constructor({
         name,
         clasesCurso = [],
     }){
-        this.name = name;
+        this._name = name;
         this.clasesCurso = clasesCurso;
+    }
+
+    get name(){
+        return this._name;
+    }
+
+    set name(newName){
+        if (newName === 'Curso p$)@+') {
+            console.error('Web... no')
+        } else {
+            this._name = newName;
+        }
     }
 }
 class CLASES {
@@ -69,6 +91,13 @@ const CursoDeFronendDeveloper = new Cursos({
         'clase 6',
     ],
 });
+
+
+// CursoDeFronendDeveloper.name = 'Curso p$)@+';       
+// console.log(CursoDeFronendDeveloper.name);        GET
+// CursoDeFronendDeveloper.name = 'Curos 1';         CON SET 
+// CursoDeFronendDeveloper.changeName('curso 2')     CON FUNCIONES
+
 
 const EscuelaDeJavascript = new Escuela({
     name: 'Escuela de JavaScript',

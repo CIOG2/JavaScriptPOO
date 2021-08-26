@@ -41,7 +41,7 @@ function VideoStop(id) {
     console.log('Video Pausado');
 }
 
-class CLASES {
+export class CLASES {
     constructor({
         name,
         id,
@@ -140,4 +140,4 @@ const zeus2 = new Student({
 
 
 console.log(Ivan2);
-console.log(zeus2);
+console.log(zeus2); 

@@ -34,11 +34,11 @@ class Cursos {
 
 function VideoPlay(id) {
     const urlSecreta = 'https://platziVideoSecreto.com/' + id;
-    console.log('Reproduciendo Video');
+    console.log('Reproduciendo Video de la url ' + urlSecreta);
 }
 function VideoStop(id) {
     const urlSecreta = 'https://platziVideoSecreto.com/' + id;
-    console.log('Video Pausado');
+    console.log('Video Pausado de la url ' + urlSecreta);
 }
 
 export class CLASES {
@@ -137,7 +137,3 @@ const zeus2 = new Student({
     instagram: 'Zeus2',
     learningPaths: EscuelaDeJavascript,
 }); 
-
-
-console.log(Ivan2);
-console.log(zeus2); 

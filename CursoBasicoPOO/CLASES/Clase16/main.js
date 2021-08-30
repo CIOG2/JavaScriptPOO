@@ -1,3 +1,26 @@
+class Comment {
+    constructor({
+        content,
+        studentName,
+        studentRole = 'estudiante',
+    }){
+        this.content = content;
+        this.studentName = studentName;
+        this.studentRole = studentRole;
+        this.likes = 0;
+    }
+
+    Publicar() {
+        console.log(`${this.studentName} (${this.studentRole})`);
+        console.log(`Likes ${this.likes}`);
+        console.log(`${this.content}`);
+    }
+
+}
+
+
+
+
 class Escuela {
     constructor({
         name,
@@ -85,7 +108,13 @@ class Student {
         this.learningPaths = learningPaths;
     }
 
-
+    PublicarComentario(CommentContent) {
+        const comment = new Comment({
+            content: CommentContent,
+            studentName: this.name,
+        })
+        comment.Publicar();
+    }
 }
 
 class FreeStudent extends Student{
@@ -126,6 +155,25 @@ class ExpertStudent extends Student{
          this.approvedCourses.push(newCourse);  
     }
 
+}
+
+class TeacherStudent extends Student{
+    constructor(props) {
+      super(props);   
+    }
+
+    CursoAprovado(newCourse) {
+         this.approvedCourses.push(newCourse);  
+    }
+    //POLIMORFISMO ---cambio del apartado comentario para uso esclusivo de los profesores
+    PublicarComentario(CommentContent) {
+        const comment = new Comment({
+            content: CommentContent,
+            studentName: this.name,
+            studentRole: 'profesor',
+        })
+        comment.Publicar();
+    }
 }
 
 
@@ -186,5 +234,10 @@ const zeus2 = new ExpertStudent({
 }); 
 
 
-console.log(Ivan2);
-console.log(zeus2);
+const freddie = new TeacherStudent({
+    name: 'Freddie Vega',
+    userName: 'Freddier',
+    email: 'Freddier@gmail.com',
+    instagram: 'Freddier',
+});
+

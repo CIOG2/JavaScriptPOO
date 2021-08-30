@@ -14,9 +14,13 @@ class Cursos {
     constructor({
         name,
         clasesCurso = [],
+        isFree = false,
+        lang = 'spanish'
     }){
         this._name = name;
         this.clasesCurso = clasesCurso;
+        this.isFree = isFree;
+        this.lang = lang;
     }
 
     get name(){
@@ -80,7 +84,51 @@ class Student {
         this.approvedCourses = approvedCourses;
         this.learningPaths = learningPaths;
     }
+
+
 }
+
+class FreeStudent extends Student{
+    constructor(props) {
+      super(props);   
+    }
+
+    CursoAprovado(newCourse) {
+        if(newCourse.isFree){
+         this.approvedCourses.push(newCourse);
+        }else{
+            console.warn('Lo siento '+ this     .name +' no puedes tomar este curso');
+        }
+    }
+}
+
+class BasicStudent extends Student{
+    constructor(props) {
+      super(props);   
+    }
+
+    CursoAprovado(newCourse) {
+        if(newCourse.leng !== 'english'){
+         this.approvedCourses.push(newCourse);
+        }else{
+            console.warn('Lo siento '+ this.name +' no puedes tomar este curso');
+        }
+    }
+
+}
+
+
+class ExpertStudent extends Student{
+    constructor(props) {
+      super(props);   
+    }
+
+    CursoAprovado(newCourse) {
+         this.approvedCourses.push(newCourse);  
+    }
+
+}
+
 
 const ClasePOO = new CLASES({
     name: 'Programacion Orientada a Objetos',
@@ -97,6 +145,8 @@ const CursoDeFronendDeveloper = new Cursos({
         'clase 5',
         'clase 6',
     ],
+    isFree: false,
+    lang: 'english',
 });
 
 
@@ -123,14 +173,14 @@ const EscuelaDeJavascript = new Escuela({
 
 
 
-const Ivan2 = new Student({
+const Ivan2 = new FreeStudent({
     name: 'Ivan',
     userName: 'CIOG',
     email: 'Carlos@gmail.com',
     instagram: 'CIOG2',
 }); 
 
-const zeus2 = new Student({
+const zeus2 = new ExpertStudent({
     name: 'Zues',
     userName: 'ZeusGamer',
     email: 'Zeus@gmail.com',
